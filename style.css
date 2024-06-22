@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5dc;
+    padding: 20px;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    border: 2px solid #ccc;
+    padding: 20px;
+    background-color: #fff;
+}
+
+h1 {
+    text-align: center;
+    color: #000;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.header label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #000;
+}
+
+.header textarea {
+    width: 100%;
+    height: 30px;
+    resize: none;
+}
+
+.header .left, .header .right {
+    width: 48%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #add8e6;
+    color: #000;
+    font-weight: bold;
+}
+
+td textarea {
+    width: 100%;
+    height: 60px;
+    resize: none;
+    border: none;
+}
+
+td select {
+    width: 100%;
+    height: 60px;
+    border: none;
+    background-color: #e0b0ff;
+}
+
+button {
+    display: block;
+    width: 100px;
+    height: 40px;
+    margin: 0 auto;
+    background-color: #4f85d5;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #47b0dd;
+}

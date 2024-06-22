@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Case Template</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>TEST CASE TEMPLATE</h1> <br> <br>
+        <div class="header">
+            <div class="left">
+                <label>Project Name</label><textarea id="projectName"></textarea>
+                <label>Module Name</label><textarea id="moduleName"></textarea>
+                <label>Test case version</label><textarea id="testCaseVersion"></textarea>
+                <label>Test Objective</label><textarea id="testObjective"></textarea>
+            </div>
+            <div class="right">
+                <label>Test Designed by</label><textarea id="testDesignedBy"></textarea>
+                <label>Test Designed Date</label><textarea id="testDesignedDate"></textarea>
+                <label>Test Executed by</label><textarea id="testExecutedBy"></textarea>
+                <label>Test Execution Date</label><textarea id="testExecutionDate"></textarea>
+            </div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Test Case Id</th>
+                    <th>Test Steps</th>
+                    <th>Input Data</th>
+                    <th>Expected Results</th>
+                    <th>Actual Results</th>
+                    <th>Execution Status</th>
+                    <th>Bug Priority</th>
+                    <th>Results</th>
+                </tr>
+            </thead>
+            <tbody id="testCases">
+                <tr>
+                    <td><textarea id="testCaseId1"></textarea></td>
+                    <td><textarea id="testSteps1"></textarea></td>
+                    <td><textarea id="inputData1"></textarea></td>
+                    <td><textarea id="expectedResults1"></textarea></td>
+                    <td><textarea id="actualResults1"></textarea></td>
+                    <td>
+                        <select id="executionStatus1">
+                            <option>Pass</option>
+                            <option>Fail</option>
+                            <option>Not Done</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="bugPriority1">
+                            <option>High</option>
+                            <option>Low</option>
+                        </select>
+                    </td>
+                    <td><textarea id="results1"></textarea></td>
+                </tr>
+                <tr>
+                    <td><textarea id="testCaseId2"></textarea></td>
+                    <td><textarea id="testSteps2"></textarea></td>
+                    <td><textarea id="inputData2"></textarea></td>
+                    <td><textarea id="expectedResults2"></textarea></td>
+                    <td><textarea id="actualResults2"></textarea></td>
+                    <td>
+                        <select id="executionStatus2">
+                            <option>Pass</option>
+                            <option>Fail</option>
+                            <option>Not Done</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="bugPriority2">
+                            <option>High</option>
+                            <option>Low</option>
+                        </select>
+                    </td>
+                    <td><textarea id="results2"></textarea></td>
+                </tr>
+                <tr>
+                    <td><textarea id="testCaseId3"></textarea></td>
+                    <td><textarea id="testSteps3"></textarea></td>
+                    <td><textarea id="inputData3"></textarea></td>
+                    <td><textarea id="expectedResults3"></textarea></td>
+                    <td><textarea id="actualResults3"></textarea></td>
+                    <td>
+                        <select id="executionStatus3">
+                            <option>Pass</option>
+                            <option>Fail</option>
+                            <option>Not Done</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="bugPriority3">
+                            <option>High</option>
+                            <option>Low</option>
+                        </select>
+                    </td>
+                    <td><textarea id="results3"></textarea></td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="submit" id="submitBtn">Submit</button>
+    </div>
+
+    <script>
+        document.getElementById('submitBtn').addEventListener('click', function() {
+            const data = {
+                projectName: document.getElementById('projectName').value,
+                moduleName: document.getElementById('moduleName').value,
+                testCaseVersion: document.getElementById('testCaseVersion').value,
+                testObjective: document.getElementById('testObjective').value,
+                testDesignedBy: document.getElementById('testDesignedBy').value,
+                testDesignedDate: document.getElementById('testDesignedDate').value,
+                testExecutedBy: document.getElementById('testExecutedBy').value,
+                testExecutionDate: document.getElementById('testExecutionDate').value,
+                testCases: [
+                    {
+                        testCaseId: document.getElementById('testCaseId1').value,
+                        testSteps: document.getElementById('testSteps1').value,
+                        inputData: document.getElementById('inputData1').value,
+                        expectedResults: document.getElementById('expectedResults1').value,
+                        actualResults: document.getElementById('actualResults1').value,
+                        executionStatus: document.getElementById('executionStatus1').value,
+                        bugPriority: document.getElementById('bugPriority1').value,
+                        results: document.getElementById('results1').value,
+                    },
+                    {
+                        testCaseId: document.getElementById('testCaseId2').value,
+                        testSteps: document.getElementById('testSteps2').value,
+                        inputData: document.getElementById('inputData2').value,
+                        expectedResults: document.getElementById('expectedResults2').value,
+                        actualResults: document.getElementById('actualResults2').value,
+                        executionStatus: document.getElementById('executionStatus2').value,
+                        bugPriority: document.getElementById('bugPriority2').value,
+                        results: document.getElementById('results2').value,
+                    },
+                    {
+                        testCaseId: document.getElementById('testCaseId3').value,
+                        testSteps: document.getElementById('testSteps3').value,
+                        inputData: document.getElementById('inputData3').value,
+                        expectedResults: document.getElementById('expectedResults3').value,
+                        actualResults: document.getElementById('actualResults3').value,
+                        executionStatus: document.getElementById('executionStatus3').value,
+                        bugPriority: document.getElementById('bugPriority3').value,
+                        results: document.getElementById('results3').value,
+                    },
+                ]
+            };
+
+            localStorage.setItem('formData', JSON.stringify(data));
+            window.location.href = 'result.html';
+        });
+    </script>
+</body>
+</html>

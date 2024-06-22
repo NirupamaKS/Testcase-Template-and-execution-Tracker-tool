@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Case Results</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>TEST CASE RESULTS</h1><br> <br>
+        <div class="header">
+            <div class="left">
+                <label>Project Name</label><div id="projectName"></div>
+                <label>Module Name</label><div id="moduleName"></div>
+                <label>Test case version</label><div id="testCaseVersion"></div>
+                <label>Test Objective</label><div id="testObjective"></div>
+            </div>
+            <div class="right">
+                <label>Test Designed by</label><div id="testDesignedBy"></div>
+                <label>Test Designed Date</label><div id="testDesignedDate"></div>
+                <label>Test Executed by</label><div id="testExecutedBy"></div>
+                <label>Test Execution Date</label><div id="testExecutionDate"></div>
+            </div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Test Case Id</th>
+                    <th>Test Steps</th>
+                    <th>Input Data</th>
+                    <th>Expected Results</th>
+                    <th>Actual Results</th>
+                    <th>Execution Status</th>
+                    <th>Bug Priority</th>
+                    <th>Results</th>
+                </tr>
+            </thead>
+            <tbody id="testCases">
+                <!-- Rows will be inserted here by JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const data = JSON.parse(localStorage.getItem('formData'));
+
+            document.getElementById('projectName').innerText = data.projectName;
+            document.getElementById('moduleName').innerText = data.moduleName;
+            document.getElementById('testCaseVersion').innerText = data.testCaseVersion;
+            document.getElementById('testObjective').innerText = data.testObjective;
+            document.getElementById('testDesignedBy').innerText = data.testDesignedBy;
+            document.getElementById('testDesignedDate').innerText = data.testDesignedDate;
+            document.getElementById('testExecutedBy').innerText = data.testExecutedBy;
+            document.getElementById('testExecutionDate').innerText = data.testExecutionDate;
+
+            const testCases = data.testCases;
+            const tbody = document.getElementById('testCases');
+
+            testCases.forEach(testCase => {
+                const row = document.createElement('tr');
+                
+                for (const key in testCase) {
+                    const cell = document.createElement('td');
+                    cell.innerText = testCase[key];
+                    row.appendChild(cell);
+                }
+                
+                tbody.appendChild(row);
+            });
+        };
+    </script>
+</body>
+</html>
